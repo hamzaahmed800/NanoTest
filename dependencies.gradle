@@ -1,0 +1,61 @@
+ext {
+
+    def CompatVersion = '1.5.1'
+    def ConstraintLayoutVersion = '2.1.4'
+    def MaterialVersion = '1.7.0'
+    def RetrofitVersion = '2.9.0'
+    def OkhttpLoggingVersion = '4.7.2'
+    def JUnitVersion = '4.13.2'
+    def JUnitTestVersion = '1.1.5'
+    def EspressoVersion = '3.5.0'
+    def HiltVersion = '2.44'
+    def NavigationComponentVersion = '2.5.3'
+    def ShapeableImageviewVersion = '1.2.0'
+    def LegacySupportVersion = '1.0.0'
+    def LifecycleVersion = '2.5.1'
+    def SdpVersion = '1.1.0'
+    def KotlinCoreVersion = '1.7.0'
+    def CoroutineVersion = '1.3.9'
+
+    androidX = [
+            kotlincore : "androidx.core:core-ktx:$KotlinCoreVersion",
+            legacy : "androidx.legacy:legacy-support-v4:$LegacySupportVersion",
+            compat     : "androidx.appcompat:appcompat:$CompatVersion",
+            constrainlayout     : "androidx.constraintlayout:constraintlayout:$ConstraintLayoutVersion",
+
+            navigationui : "androidx.navigation:navigation-ui-ktx:$NavigationComponentVersion",
+            navigationfragment : "androidx.navigation:navigation-fragment-ktx:$NavigationComponentVersion",
+            navigationdynamicfeature: "androidx.navigation:navigation-dynamic-features-fragment:$NavigationComponentVersion",
+
+            lifecyclelivedata: "androidx.lifecycle:lifecycle-livedata-ktx:$LifecycleVersion",
+            lifecycleviewmodel: "androidx.lifecycle:lifecycle-viewmodel-ktx:$LifecycleVersion",
+    ]
+    ui = [
+            material     : "com.google.android.material:material:$MaterialVersion",
+            shapeableImageview     : "com.google.android.material:material:$ShapeableImageviewVersion",
+
+            sdpsize : "com.intuit.sdp:sdp-android:$SdpVersion",
+    ]
+    coroutine = [
+            coroutinecore : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$CoroutineVersion",
+            coroutineandroid : "org.jetbrains.kotlinx:kotlinx-coroutines-android:$CoroutineVersion",
+    ]
+    network = [
+            retrofit     : "com.squareup.retrofit2:retrofit:$RetrofitVersion",
+            retrofitconverter     : "com.squareup.retrofit2:converter-gson:$RetrofitVersion",
+            okhttplogging     : "com.squareup.okhttp3:logging-interceptor:$OkhttpLoggingVersion",
+    ]
+    di = [
+            hiltandroid     : "com.google.dagger:hilt-android:$HiltVersion",
+    ]
+    compiler = [
+            kotlinKapt     : "com.google.dagger:hilt-android-compiler:$HiltVersion",
+    ]
+    test = [
+            junit        : "junit:junit:4.13.2:$JUnitVersion",
+    ]
+    testimplementation = [
+            testJUnit      : "androidx.test.ext:junit:$JUnitTestVersion",
+            espresso      : "androidx.test.espresso:espresso-core:$EspressoVersion",
+    ]
+}

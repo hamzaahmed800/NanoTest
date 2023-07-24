@@ -1,0 +1,55 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'dagger.hilt.android.plugin'
+    id 'androidx.navigation.safeargs.kotlin'
+    id 'kotlin-kapt'
+}
+apply from: '../dependencies.gradle'
+
+android {
+    namespace 'com.nano.test'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.nano.test"
+        minSdk 24
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation project.ext.androidX.values()
+    implementation project.ext.ui.values()
+    implementation project.ext.network.values()
+    implementation project.ext.coroutine.values()
+    implementation project.ext.di.values()
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    kapt project.ext.compiler.values()
+
+    annotationProcessor project.ext.compiler.values()
+
+    testImplementation project.ext.test.values()
+    androidTestImplementation project.ext.testimplementation.values()
+}
